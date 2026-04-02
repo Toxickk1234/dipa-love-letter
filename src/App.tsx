@@ -204,13 +204,51 @@ export default function App() {
               It's not just the big moments that made me fall for you.
             </MessageBlock>
 
-            <div className="relative w-full max-w-3xl h-[400px] md:h-[500px] my-12 mx-auto">
+            {/* Mobile: stacked layout, Desktop: scattered polaroid layout */}
+            {/* Mobile layout */}
+            <div className="flex flex-col items-center gap-6 my-12 md:hidden px-4 w-full">
+              <motion.div
+                initial={{ opacity: 0, rotate: -4, y: 20 }}
+                whileInView={{ opacity: 1, rotate: -4, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="w-48 p-3 bg-white shadow-xl rounded-sm border border-gray-100"
+              >
+                <img src="/little1.jpg" alt="Your laugh" className="w-full aspect-square object-cover mb-3" loading="lazy" />
+                <p className="font-serif text-center text-gray-600 text-sm italic">Your laugh</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, rotate: 5, y: 20 }}
+                whileInView={{ opacity: 1, rotate: 5, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="w-48 p-3 bg-white shadow-xl rounded-sm border border-gray-100 self-end mr-4"
+              >
+                <img src="/little2.jpg" alt="Your eyes" className="w-full aspect-square object-cover mb-3" loading="lazy" />
+                <p className="font-serif text-center text-gray-600 text-sm italic">Your eyes</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, rotate: -2, y: 20 }}
+                whileInView={{ opacity: 1, rotate: -2, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="w-52 p-3 bg-white shadow-2xl rounded-sm border border-gray-100 self-center"
+              >
+                <img src="/little3.webp" alt="Just you" className="w-full aspect-square object-cover mb-3" loading="lazy" />
+                <p className="font-serif text-center text-gray-600 text-sm italic">Just you</p>
+              </motion.div>
+            </div>
+
+            {/* Desktop layout - scattered polaroids */}
+            <div className="relative w-full max-w-3xl h-[500px] my-12 mx-auto hidden md:block">
               <motion.div
                 initial={{ opacity: 0, rotate: -10, x: -50, y: 20 }}
                 whileInView={{ opacity: 1, rotate: -6, x: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="absolute left-0 md:left-[10%] top-[10%] w-40 md:w-56 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-10"
+                className="absolute left-[10%] top-[10%] w-56 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-10"
               >
                 <img src="/little1.jpg" alt="Your laugh" className="w-full aspect-square object-cover mb-3" loading="lazy" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Your laugh</p>
@@ -221,7 +259,7 @@ export default function App() {
                 whileInView={{ opacity: 1, rotate: 8, x: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="absolute right-0 md:right-[10%] top-[30%] w-44 md:w-60 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-20"
+                className="absolute right-[10%] top-[30%] w-60 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-20"
               >
                 <img src="/little2.jpg" alt="Your eyes" className="w-full aspect-square object-cover mb-3" loading="lazy" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Your eyes</p>
@@ -232,7 +270,7 @@ export default function App() {
                 whileInView={{ opacity: 1, rotate: -2, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="absolute left-[20%] md:left-[35%] bottom-[5%] w-48 md:w-64 p-3 bg-white shadow-2xl rounded-sm border border-gray-100 z-30"
+                className="absolute left-[35%] bottom-[5%] w-64 p-3 bg-white shadow-2xl rounded-sm border border-gray-100 z-30"
               >
                 <img src="/little3.webp" alt="Just you" className="w-full aspect-square object-cover mb-3" loading="lazy" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Just you</p>
