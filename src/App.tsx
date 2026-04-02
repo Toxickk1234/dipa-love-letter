@@ -18,14 +18,49 @@ export default function App() {
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [isAtEnd, setIsAtEnd] = useState(false);
   const bgmRef = useRef<HTMLAudioElement>(null);
+  const fadeIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const clearFade = () => {
+    if (fadeIntervalRef.current) {
+      clearInterval(fadeIntervalRef.current);
+      fadeIntervalRef.current = null;
+    }
+  };
+
+  const fadeTo = (target: number, step: number = 0.01, ms: number = 80) => {
+    const audio = bgmRef.current;
+    if (!audio) return;
+    clearFade();
+    fadeIntervalRef.current = setInterval(() => {
+      const current = audio.volume;
+      if (Math.abs(current - target) <= step) {
+        audio.volume = target;
+        clearFade();
+      } else {
+        audio.volume = current < target ? Math.min(current + step, target) : Math.max(current - step, target);
+      }
+    }, ms);
+  };
 
   const startBgm = () => {
     const audio = bgmRef.current;
-    if (audio) {
-      audio.volume = 0.85;
-      audio.play().catch(e => console.log('Audio play failed:', e));
+    if (audio && audio.paused) {
+      audio.volume = 0;
+      audio.play().then(() => {
+        fadeTo(0.75, 0.015, 80); // fade in to 75% over ~4s
+      }).catch(e => console.log('Audio play failed:', e));
     }
   };
+
+  // When reaching the final section: fade out then swell back up
+  useEffect(() => {
+    if (isAtEnd) {
+      fadeTo(0.12, 0.015, 80); // fade out to 12%
+      setTimeout(() => {
+        fadeTo(0.75, 0.008, 80); // slowly swell back to 75%
+      }, 2500);
+    }
+  }, [isAtEnd]);
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
