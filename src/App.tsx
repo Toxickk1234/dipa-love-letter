@@ -132,7 +132,7 @@ export default function App() {
 
             <ImageGallery images={[
               { 
-                src: "/dipa1.jpg", 
+                src: "/dipa1.webp", 
                 alt: "Beautiful portrait of Dipa",
                 className: "w-64 h-80 md:w-72 md:h-96 rotate-[-2deg]"
               },
@@ -174,7 +174,7 @@ export default function App() {
 
             <ImageGallery images={[
               { 
-                src: "/our-story.jpg", 
+                src: "/our-story.webp", 
                 alt: "Our Story",
                 className: "w-full max-w-2xl h-64 md:h-96 rounded-3xl object-cover"
               }
@@ -212,7 +212,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.2 }}
                 className="absolute left-0 md:left-[10%] top-[10%] w-40 md:w-56 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-10"
               >
-                <img src="/little1.jpg" alt="Your laugh" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
+                <img src="/little1.jpg" alt="Your laugh" className="w-full aspect-square object-cover mb-3" loading="lazy" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Your laugh</p>
               </motion.div>
 
@@ -223,7 +223,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="absolute right-0 md:right-[10%] top-[30%] w-44 md:w-60 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-20"
               >
-                <img src="/little2.jpg" alt="Your eyes" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
+                <img src="/little2.jpg" alt="Your eyes" className="w-full aspect-square object-cover mb-3" loading="lazy" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Your eyes</p>
               </motion.div>
 
@@ -234,7 +234,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.6 }}
                 className="absolute left-[20%] md:left-[35%] bottom-[5%] w-48 md:w-64 p-3 bg-white shadow-2xl rounded-sm border border-gray-100 z-30"
               >
-                <img src="/little3.webp" alt="Just you" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
+                <img src="/little3.webp" alt="Just you" className="w-full aspect-square object-cover mb-3" loading="lazy" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Just you</p>
               </motion.div>
             </div>
@@ -273,7 +273,7 @@ export default function App() {
                 title: 'Endless Conversations',
                 summary: 'Hours feel like minutes when we talk.',
                 details: 'I could listen to your voice forever and never get tired of it. Every late-night call, every shared secret, every silly joke brought us closer together in ways I can\'t fully explain.',
-                image: '/moment2.jpg'
+                image: '/moment2.webp'
               },
               {
                 id: '3',
@@ -281,7 +281,7 @@ export default function App() {
                 title: 'A Perfect Day',
                 summary: 'The day we just existed together, with nowhere to be.',
                 details: 'No big plans, just you and me. Those simple, quiet moments are the ones I treasure the most, because they showed me how effortless and beautiful loving you is.',
-                image: '/moment3.jpg'
+                image: '/moment3.webp'
               }
             ]} />
 
@@ -312,7 +312,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.2 }}
                 className="relative w-full md:w-1/2 aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(194,24,91,0.15)] group"
               >
-                <img src="/intimate1.jpg" alt="Together" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="/intimate1.webp" alt="Together" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-rose-900/80 via-rose-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                   <p className="text-white font-serif italic text-xl md:text-2xl tracking-wide">Fingers intertwined...</p>
                 </div>
@@ -325,7 +325,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="relative w-full md:w-1/2 aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(194,24,91,0.15)] group mt-8 md:mt-16"
               >
-                <img src="/intimate2.jpg" alt="Close together" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="/intimate2.jpg" alt="Close together" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-rose-900/80 via-rose-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                   <p className="text-white font-serif italic text-xl md:text-2xl tracking-wide">Late night whispers...</p>
                 </div>
