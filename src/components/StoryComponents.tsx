@@ -5,18 +5,21 @@ interface StorySectionProps {
   id: string;
   children: ReactNode;
   className?: string;
+  onViewportEnter?: () => void;
 }
 
-export function StorySection({ id, children, className = '' }: StorySectionProps) {
+export function StorySection({ id, children, className = '', onViewportEnter }: StorySectionProps) {
   return (
-    <section 
+    <motion.section 
       id={id} 
+      onViewportEnter={onViewportEnter}
+      viewport={{ once: true, margin: "-20%" }}
       className={`min-h-screen w-full flex flex-col items-center justify-center py-24 px-6 relative z-10 ${className}`}
     >
       <div className="max-w-3xl w-full mx-auto flex flex-col items-center">
         {children}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -17,6 +17,7 @@ export default function App() {
   const [appState, setAppState] = useState<'start' | 'greeting' | 'story'>('start');
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const [isNearEnd, setIsNearEnd] = useState(false);
   const bgmRef = useRef<HTMLAudioElement>(null);
   const fadeIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -52,13 +53,17 @@ export default function App() {
     }
   };
 
-  // When reaching the final section: fade out then swell back up
+  // When reaching second-to-last section: slowly fade out BGM
+  useEffect(() => {
+    if (isNearEnd && !isAtEnd) {
+      fadeTo(0, 0.005, 80); // very slow fade out to silence over ~12s
+    }
+  }, [isNearEnd]);
+
+  // When reaching the final section: swell back up
   useEffect(() => {
     if (isAtEnd) {
-      fadeTo(0.12, 0.015, 80); // fade out to 12%
-      setTimeout(() => {
-        fadeTo(0.75, 0.008, 80); // slowly swell back to 75%
-      }, 2500);
+      fadeTo(0.75, 0.008, 80); // slowly swell back to 75%
     }
   }, [isAtEnd]);
 
@@ -450,7 +455,7 @@ export default function App() {
           </StorySection>
 
           {/* Section 4.5 - Reasons Why */}
-          <StorySection id="section-reasons">
+          <StorySection id="section-reasons" onViewportEnter={() => setIsNearEnd(true)}>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
