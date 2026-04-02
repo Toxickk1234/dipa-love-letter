@@ -17,23 +17,13 @@ export default function App() {
   const [appState, setAppState] = useState<'start' | 'greeting' | 'story'>('start');
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [isAtEnd, setIsAtEnd] = useState(false);
-  const bgmRef = useRef<HTMLAudioElement | null>(null);
+  const bgmRef = useRef<HTMLAudioElement>(null);
 
   const startBgm = () => {
-    if (!bgmRef.current) {
-      const audio = new Audio('/bgm.mp3');
-      audio.loop = true;
-      audio.volume = 0;
-      bgmRef.current = audio;
-      audio.play().then(() => {
-        // Gentle fade in
-        let vol = 0;
-        const fadeIn = setInterval(() => {
-          vol = Math.min(vol + 0.02, 0.85);
-          audio.volume = vol;
-          if (vol >= 0.85) clearInterval(fadeIn);
-        }, 100);
-      }).catch(e => console.log('Audio autoplay blocked:', e));
+    const audio = bgmRef.current;
+    if (audio) {
+      audio.volume = 0.85;
+      audio.play().catch(e => console.log('Audio play failed:', e));
     }
   };
 
@@ -57,6 +47,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-beige selection:bg-rose-200 selection:text-rose-900 font-sans">
+      <audio ref={bgmRef} src="/bgm.mp3" preload="auto" loop playsInline />
       <Particles />
       <MusicPlayer isAtEnd={isAtEnd} />
 
