@@ -132,13 +132,13 @@ export default function App() {
 
             <ImageGallery images={[
               { 
-                src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=800", 
-                alt: "Beautiful portrait",
+                src: "/dipa1.jpg", 
+                alt: "Beautiful portrait of Dipa",
                 className: "w-64 h-80 md:w-72 md:h-96 rotate-[-2deg]"
               },
               { 
-                src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800", 
-                alt: "Smiling",
+                src: "/dipa2.jpg", 
+                alt: "Dipa",
                 className: "w-56 h-72 md:w-64 md:h-80 rotate-[3deg] mt-8 md:mt-16"
               }
             ]} />
@@ -174,8 +174,8 @@ export default function App() {
 
             <ImageGallery images={[
               { 
-                src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=800", 
-                alt: "Holding hands",
+                src: "/our-story.jpg", 
+                alt: "Our Story",
                 className: "w-full max-w-2xl h-64 md:h-96 rounded-3xl object-cover"
               }
             ]} />
@@ -212,7 +212,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.2 }}
                 className="absolute left-0 md:left-[10%] top-[10%] w-40 md:w-56 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-10"
               >
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400" alt="Detail 1" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
+                <img src="/little1.jpg" alt="Your laugh" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Your laugh</p>
               </motion.div>
 
@@ -223,7 +223,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="absolute right-0 md:right-[10%] top-[30%] w-44 md:w-60 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-20"
               >
-                <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&q=80&w=400" alt="Detail 2" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
+                <img src="/little2.jpg" alt="Your eyes" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Your eyes</p>
               </motion.div>
 
@@ -234,7 +234,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.6 }}
                 className="absolute left-[20%] md:left-[35%] bottom-[5%] w-48 md:w-64 p-3 bg-white shadow-2xl rounded-sm border border-gray-100 z-30"
               >
-                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=400" alt="Detail 3" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
+                <img src="/little3.webp" alt="Just you" className="w-full aspect-square object-cover mb-3" referrerPolicy="no-referrer" />
                 <p className="font-serif text-center text-gray-600 text-sm italic">Just you</p>
               </motion.div>
             </div>
@@ -265,7 +265,7 @@ export default function App() {
                 title: 'That First Spark',
                 summary: 'I remember the exact moment I realized you were special.',
                 details: 'It wasn\'t just butterflies; it was a deep, sudden sense of peace. Like I had finally found something I didn\'t even know I was looking for. Everything just clicked into place.',
-                image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=800'
+                image: '/moment1.jpg'
               },
               {
                 id: '2',
@@ -273,7 +273,7 @@ export default function App() {
                 title: 'Endless Conversations',
                 summary: 'Hours feel like minutes when we talk.',
                 details: 'I could listen to your voice forever and never get tired of it. Every late-night call, every shared secret, every silly joke brought us closer together in ways I can\'t fully explain.',
-                image: 'https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&q=80&w=800'
+                image: '/moment2.jpg'
               },
               {
                 id: '3',
@@ -281,7 +281,7 @@ export default function App() {
                 title: 'A Perfect Day',
                 summary: 'The day we just existed together, with nowhere to be.',
                 details: 'No big plans, just you and me. Those simple, quiet moments are the ones I treasure the most, because they showed me how effortless and beautiful loving you is.',
-                image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=800'
+                image: '/moment3.jpg'
               }
             ]} />
 
@@ -312,7 +312,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.2 }}
                 className="relative w-full md:w-1/2 aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(194,24,91,0.15)] group"
               >
-                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800" alt="Holding hands" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="/intimate1.jpg" alt="Together" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-rose-900/80 via-rose-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                   <p className="text-white font-serif italic text-xl md:text-2xl tracking-wide">Fingers intertwined...</p>
                 </div>
@@ -325,7 +325,7 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="relative w-full md:w-1/2 aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(194,24,91,0.15)] group mt-8 md:mt-16"
               >
-                <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&q=80&w=800" alt="Close together" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="/intimate2.jpg" alt="Close together" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-rose-900/80 via-rose-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                   <p className="text-white font-serif italic text-xl md:text-2xl tracking-wide">Late night whispers...</p>
                 </div>
@@ -394,42 +394,6 @@ export default function App() {
               <FlipCard frontText="03" backText="Your infectious smile that lights up my darkest days." delay={0.5} />
               <FlipCard frontText="04" backText="Because you are simply, perfectly, unapologetically you." delay={0.7} />
             </div>
-
-            <NextButton onClick={() => scrollTo('section-5')} text="Our future..." />
-          </StorySection>
-
-          {/* Section 5 - The Future */}
-          <StorySection id="section-5" className="bg-gradient-to-b from-transparent via-rose-50/50 to-transparent">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="font-serif text-4xl md:text-5xl text-rose-800 mb-12 text-center italic"
-            >
-              A Glimpse Ahead
-            </motion.h2>
-
-            <MessageBlock>
-              I don't know how long we would stay together...
-            </MessageBlock>
-
-            <MessageBlock delay={0.4}>
-              But if we stay together, I like to imagine it might look a little something like this. 🥺
-            </MessageBlock>
-
-            <ImageGallery images={[
-              { 
-                src: "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&q=80&w=800", 
-                alt: "Couple with a cute baby",
-                className: "w-64 h-80 md:w-72 md:h-96 rotate-[2deg]"
-              },
-              { 
-                src: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=800", 
-                alt: "Happy family",
-                className: "w-56 h-72 md:w-64 md:h-80 rotate-[-3deg] mt-8 md:mt-16"
-              }
-            ]} />
 
             <NextButton onClick={() => scrollTo('section-final')} text="One last thing..." />
           </StorySection>

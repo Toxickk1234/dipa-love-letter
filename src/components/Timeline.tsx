@@ -68,12 +68,27 @@ export function Timeline({ memories }: { memories: Memory[] }) {
                         className="overflow-hidden"
                       >
                         <div className="pt-4 border-t border-rose-100">
-                          <img 
-                            src={memory.image} 
-                            alt={memory.title} 
-                            className="w-full h-48 object-cover rounded-xl mb-4 shadow-md"
-                            referrerPolicy="no-referrer"
-                          />
+                          {memory.image.match(/\.(mp4|webm)$/i) ? (
+                            <video 
+                              src={memory.image}
+                              controls
+                              muted
+                              loop
+                              playsInline
+                              preload="metadata"
+                              className="w-full h-48 rounded-xl mb-4 shadow-md bg-rose-50"
+                              style={{ objectFit: 'cover' }}
+                            >
+                              <p className="text-gray-500 text-sm text-center py-4">Loading video...</p>
+                            </video>
+                          ) : (
+                            <img 
+                              src={memory.image} 
+                              alt={memory.title} 
+                              className="w-full h-48 object-cover rounded-xl mb-4 shadow-md"
+                              referrerPolicy="no-referrer"
+                            />
+                          )}
                           <p className="text-gray-700 font-light leading-relaxed text-sm md:text-base">
                             {memory.details}
                           </p>
