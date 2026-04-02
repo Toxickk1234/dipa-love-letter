@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-blush: #FFC0CB;
+  --color-beige: #F5E6E8;
+  --color-rose: #C2185B;
+}
+
+body {
+  background-color: var(--color-beige);
+  color: #333;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Hide scrollbar for a cleaner cinematic look */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* 3D Flip Card Utilities */
+.perspective-1000 { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }
+
