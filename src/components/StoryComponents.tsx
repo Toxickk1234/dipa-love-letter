@@ -37,7 +37,7 @@ export function MessageBlock({ children, delay = 0 }: { children: ReactNode, del
   );
 }
 
-export function ImageGallery({ images }: { images: { src: string; alt: string; className?: string }[] }) {
+export function ImageGallery({ images, eager = false }: { images: { src: string; alt: string; className?: string }[]; eager?: boolean }) {
   return (
     <div className="w-full flex flex-wrap justify-center gap-6 my-12">
       {images.map((img, idx) => (
@@ -54,8 +54,9 @@ export function ImageGallery({ images }: { images: { src: string; alt: string; c
             src={img.src} 
             alt={img.alt} 
             className="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
+            loading={eager ? "eager" : "lazy"}
+            decoding={eager ? "sync" : "async"}
+            fetchPriority={eager ? "high" : undefined}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-rose-900/20 to-transparent mix-blend-overlay" />
         </motion.div>

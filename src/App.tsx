@@ -130,7 +130,7 @@ export default function App() {
               To the girl who changed everything...
             </motion.h2>
 
-            <ImageGallery images={[
+            <ImageGallery eager images={[
               { 
                 src: "/dipa1.webp", 
                 alt: "Beautiful portrait of Dipa",
