@@ -29,9 +29,9 @@ export default function App() {
         // Gentle fade in
         let vol = 0;
         const fadeIn = setInterval(() => {
-          vol = Math.min(vol + 0.02, 0.35);
+          vol = Math.min(vol + 0.02, 0.85);
           audio.volume = vol;
-          if (vol >= 0.35) clearInterval(fadeIn);
+          if (vol >= 0.85) clearInterval(fadeIn);
         }, 100);
       }).catch(e => console.log('Audio autoplay blocked:', e));
     }
