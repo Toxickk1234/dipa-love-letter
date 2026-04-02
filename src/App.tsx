@@ -214,8 +214,8 @@ export default function App() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="w-48 p-3 bg-white shadow-xl rounded-sm border border-gray-100"
               >
-                <img src="/little1.jpg" alt="Your laugh" className="w-full aspect-square object-cover mb-3" loading="lazy" />
-                <p className="font-serif text-center text-gray-600 text-sm italic">Your laugh</p>
+                <img src="/little1.jpg" alt="Your smile" className="w-full aspect-square object-cover mb-3" loading="lazy" />
+                <p className="font-serif text-center text-gray-600 text-sm italic">Your smile</p>
               </motion.div>
 
               <motion.div
@@ -250,8 +250,8 @@ export default function App() {
                 transition={{ duration: 1, delay: 0.2 }}
                 className="absolute left-[10%] top-[10%] w-56 p-3 bg-white shadow-xl rounded-sm border border-gray-100 z-10"
               >
-                <img src="/little1.jpg" alt="Your laugh" className="w-full aspect-square object-cover mb-3" loading="lazy" />
-                <p className="font-serif text-center text-gray-600 text-sm italic">Your laugh</p>
+                <img src="/little1.jpg" alt="Your smile" className="w-full aspect-square object-cover mb-3" loading="lazy" />
+                <p className="font-serif text-center text-gray-600 text-sm italic">Your smile</p>
               </motion.div>
 
               <motion.div
