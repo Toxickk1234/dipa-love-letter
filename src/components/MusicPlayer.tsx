@@ -86,7 +86,7 @@ export function MusicPlayer({ isAtEnd = false }: { isAtEnd?: boolean }) {
               </button>
 
               <iframe
-                src="https://www.youtube.com/embed/CtBZMzFOnkc?autoplay=1&loop=1&playlist=CtBZMzFOnkc"
+                src="https://www.youtube.com/embed/TqxUkKnKxYo?autoplay=1&loop=1&playlist=TqxUkKnKxYo"
                 title="Our Song"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
