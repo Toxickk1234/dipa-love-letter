@@ -4,7 +4,7 @@
  */
 
 import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Particles } from './components/Particles';
 import { MusicPlayer } from './components/MusicPlayer';
 import { Typewriter } from './components/Typewriter';
@@ -17,6 +17,25 @@ export default function App() {
   const [appState, setAppState] = useState<'start' | 'greeting' | 'story'>('start');
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const bgmRef = useRef<HTMLAudioElement | null>(null);
+
+  const startBgm = () => {
+    if (!bgmRef.current) {
+      const audio = new Audio('https://cdn.pixabay.com/download/audio/2024/11/04/audio_4956b4ece1.mp3?filename=sweet-love-253036.mp3');
+      audio.loop = true;
+      audio.volume = 0;
+      bgmRef.current = audio;
+      audio.play().then(() => {
+        // Gentle fade in
+        let vol = 0;
+        const fadeIn = setInterval(() => {
+          vol = Math.min(vol + 0.02, 0.35);
+          audio.volume = vol;
+          if (vol >= 0.35) clearInterval(fadeIn);
+        }, 100);
+      }).catch(e => console.log('Audio autoplay blocked:', e));
+    }
+  };
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -106,7 +125,7 @@ export default function App() {
                 transition={{ delay: 1.2, duration: 0.5 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setAppState('story')}
+                onClick={() => { startBgm(); setAppState('story'); }}
                 className="px-8 py-3 rounded-full bg-rose-100/80 text-rose-700 font-medium tracking-wide transition-all duration-300 hover:bg-rose-200 hover:shadow-[0_0_30px_rgba(194,24,91,0.2)] hover:text-rose-900 hover:border-rose-300 border border-rose-200 shadow-sm"
               >
                 Open Gift 🎁
