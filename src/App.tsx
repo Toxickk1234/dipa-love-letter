@@ -21,7 +21,7 @@ export default function App() {
 
   const startBgm = () => {
     if (!bgmRef.current) {
-      const audio = new Audio('https://cdn.pixabay.com/download/audio/2024/11/04/audio_4956b4ece1.mp3?filename=sweet-love-253036.mp3');
+      const audio = new Audio('/bgm.mp3');
       audio.loop = true;
       audio.volume = 0;
       bgmRef.current = audio;
